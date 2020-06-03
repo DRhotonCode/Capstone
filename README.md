@@ -1,19 +1,19 @@
 #Capstone Project Overview
 ##Application Name
 **********************************************
-Tech Job Seeker
+Tattoo Finder
 
 ##Elevator Pitch
 **********************************************
-This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.
+This application allows users to search for tattoo artists around the world and in their area. This application also allows users to search for tattoo artists by tatooing style and name. The application allows users to create a profile to save artists, photos and tags they are interested in.
 
-This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.
+This application allows tattoo artists to create a profile. The artist can upload photos, give a description about themselves, and place tags of what they specialize in. The application also allows the artist to delete or edit their description and tags. An artist can also search for other artists by location, style, and name.
 
 ##Key Features
 **********************************************
-1. User and Admin Login
+1. User and Artist Login
 2. Saved jobs within User Profiles
-3. Google Maps integration for Employer location
+3. Google Maps integration for Artist Shop location
 
 ##Technologies List
 **********************************************
@@ -25,8 +25,8 @@ This application allows job seekers to find and search for jobs on the market an
 
 ##Example Applications
 **********************************************
-Indeed.com : https://www.indeed.com/
-monster.com : https://www.monster.com/
+tattoodo.com : https://www.tattoodo.com/
+instagram.com : https://www.instagram.com/
 
 
 ##Initial User stories
