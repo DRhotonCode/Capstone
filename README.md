@@ -12,7 +12,7 @@ This application allows tattoo artists to create a profile. The artist can uploa
 ##Key Features
 **********************************************
 1. User and Artist Login
-2. Saved jobs within User Profiles
+2. Save Tattoo Artist Profiles
 3. Google Maps integration for Artist Shop location
 
 ##Technologies List
