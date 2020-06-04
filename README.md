@@ -37,7 +37,7 @@ As a user I want to search for tattoo artists by name so that I can find a speci
 
 As a user I want to search for tattoo artists by location so I can find all artists in a certain location.
 
-As a user I want to search for tattoo artists by style so I can find all artists who specailize in that certain style. 
+As a user I want to search for tattoo artists by style so I can find all artists who specialize in that certain style. 
 
 As a tattoo artist I want to add photos to my page so that I can show off my work.
 
@@ -47,7 +47,7 @@ As a tattoo artist I want to add my tattoo styles to my page so when searched, I
 
 As a tattoo artist I want to search for other tattoo artist by All, Name, Style, and Location so that I can admire their work and find inspiration
 
-As a tattoo artist I want to delete photos off of my page so that if theres an error or the photo is incorrect it can be removed.
+As a tattoo artist I want to delete photos off of my page so that if there is an error or the photo is incorrect it can be removed.
 
 As a tattoo artist I want to edit my name and description so that I can keep all the information on there up to date.
 
