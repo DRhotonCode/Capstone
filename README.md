@@ -31,20 +31,26 @@ instagram.com : https://www.instagram.com/
 
 ##Initial User stories
 **********************************************
-As a Job Seeker I want to list all available jobs so that I can get an overview of the overall job market.
+As a User I want to list all tattoo artists so that I can get an overview of all tattoo artists.
 
-As a Job Seeker I want to search for jobs by location, skill and employer so I can find jobs that are within specfication.
+As a user I want to search for tattoo artists by name so that I can find a specific artist with their location and styles.
 
-As a Job Seeker I want to access a personal profile of my choices so I can have jobs specific to my needs display.
+As a user I want to search for tattoo artists by location so I can find all artists in a certain location.
 
-As a Job Seeker I want to save relivent jobs to my profile so I can return to them on a later date.
+As a user I want to search for tattoo artists by style so I can find all artists who specailize in that certain style. 
 
-As a Company I want to add in a new job entries so I can allow job seekers to easily find them.
+As a tattoo artist I want to add photos to my page so that I can show off my work.
 
-As a Company I want to edit in a job entries so I can update their status their properties easily.
+As a tattoo artist I want to add a description of myself so that users/other artists can get a brief of what kind of artist I am.
 
-As a Company I want to disable job entries that I am no longer offering so that job seekers can not see them.
+As a tattoo artist I want to add my tattoo styles to my page so when searched, I will be listed with all the artists attached to that tag.
 
-As a Company I want to delete job entries that are no longer valid so that job seeker can not access them.
+As a tattoo artist I want to search for other tattoo artist by All, Name, Style, and Location so that I can admire their work and find inspiration
 
-As a Company I want to see a list of all of my job entries that are they can easily be edited and updated in the future.
+As a tattoo artist I want to delete photos off of my page so that if theres an error or the photo is incorrect it can be removed.
+
+As a tattoo artist I want to edit my name and description so that I can keep all the information on there up to date.
+
+As a user/artist I want to be able to create an account so that I can login and access the pages allowed for that type of user.(User or Artist)
+
+As a user/artist I want to be able to click the app title at the top and be brought back to my home page so I can jump back to my home page from wherever I am in the app.
