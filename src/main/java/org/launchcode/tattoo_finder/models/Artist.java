@@ -1,10 +1,17 @@
 package org.launchcode.tattoo_finder.models;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
 public class Artist extends AbstractEntity{
+
+    @NotNull
+    @NotBlank
+    private String name;
 
     @Size(max = 500, message = "Bio must be 500 characters or less")
     private String bio;
@@ -13,7 +20,8 @@ public class Artist extends AbstractEntity{
 
     private String style;
 
-    public Artist(String bio, String shopLocation, String style) {
+    public Artist(String name, String bio, String shopLocation, String style) {
+        this.name = name;
         this.bio = bio;
         this.shopLocation = shopLocation;
         this.style = style;
@@ -43,5 +51,18 @@ public class Artist extends AbstractEntity{
 
     public void setStyle(String style) {
         this.style = style;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
