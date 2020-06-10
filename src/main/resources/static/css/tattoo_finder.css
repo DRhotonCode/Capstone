@@ -9,6 +9,10 @@
   font-family: 'Miltonian', cursive;
 }
 
+.addForm{
+  text-align: center;
+}
+
 td, th {
     padding: 10px;
 }

@@ -7,10 +7,12 @@ import org.launchcode.tattoo_finder.models.data.StyleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.Optional;
 
 @Controller
 public class HomeController {
@@ -56,4 +58,35 @@ public class HomeController {
 
             return "index-artists";
         }
+
+    @GetMapping("add")
+    public String displayAddArtistForm(Model model) {
+        model.addAttribute(new Artist());
+        return "add";
+    }
+
+    @PostMapping("add")
+    public String processAddJobForm(@ModelAttribute @Valid Artist newArtist,
+                                    Errors errors) {
+
+        if (errors.hasErrors()) {
+            return "add";
+        }
+
+        artistRepository.save(newArtist);
+        return "redirect:";
+    }
+
+    @GetMapping("view/{artistId}")
+    public String displayViewJob(Model model, @PathVariable int artistId) {
+
+        Optional optArtist = artistRepository.findById(artistId);
+        if (!optArtist.isEmpty()) {
+            Artist artist = (Artist) optArtist.get();
+            model.addAttribute("artist", artist);
+            return "view";
+        } else {
+            return "redirect:/";
+        }
+    }
 }
