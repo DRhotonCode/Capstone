@@ -3,10 +3,45 @@
 <head th:replace="fragments :: head">
 </head>
 <body>
+
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
-    <h2>All Artists</h2>
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+    <h2 class = "centered">All Artists by Category</h2>
 </div>
+
+<table class="centeredTable">
+    <tr>
+        <th>All</th>
+        <th>Name</th>
+        <th>Style</th>
+        <th>Location</th>
+    </tr>
+
+    <tr>
+        <td>
+            <li>
+                <a th:href="@{/list/artists(column='All',value='View All')}">View All</a>
+            </li>
+        </td>
+        <td>
+            <li th:each="artist : ${artists}">
+                <a th:href="@{/list/artists(column=name,value=${artist.name})}" th:text="${artist.name}"></a>
+            </li>
+        </td>
+        <td>
+            <li th:each="style : ${styles}">
+                <a th:href="@{/list/artists(column=style,value=${style.name})}" th:text="${style.name}"></a>
+            </li>
+        </td>
+        <td>
+            <li th:each="artist : ${artists}">
+                <a th:href="@{/list/artists(column=location,value=${artist.location})}" th:text="${artist.location}"></a>
+            </li>
+        </td>
+    </tr>
+</table>
+
 </body>
 </html>
