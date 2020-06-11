@@ -34,17 +34,17 @@ tr:nth-child(odd) {
     margin-right: auto;
 }
 
-table.job-listing {
+table.artist-listing {
     margin: 30px auto;
     border: 1px solid #e4e4e4;
     width: 80%;
 }
 
-table.job-listing td:first-child {
+table.artist-listing td:first-child {
     font-weight: bold;
 }
 
-table.job-listing td:last-child {
+table.artist-listing td:last-child {
     width: 80%;
 }
 
@@ -66,7 +66,7 @@ p {
     margin-right: auto;
 }
 
-div.job-listing {
+div.artist-listing {
     border: 1px solid #e4e4e4;
     width: 80%;
     background-color: #e4e4e4;

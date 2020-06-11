@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container  body-content">
+<h1 th:text="${'Tattoo Artist: ' + artist.name}">Default Title</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<div class="artist-listing">
+    <p th:text="${'ID: ' + artist.id}"></p>
+    <p th:text="${'Name: ' + artist.name}"></p>
+    <p th:text="${'Bio: ' + artist.bio}"></p>
+    <p> Tattoo Styles:
+    <ul>
+        <li th:each="style : ${artist.styles}">
+            <a th:href="@{'/styles/view/' + ${style.id}}" th:text="${style.name}"></a>
+        </li>
+    </ul>
+    </p>
+    <p>
+        <img src="${artist.img}">
+    </p>
+</div>
+
+
+</body>
+</html>

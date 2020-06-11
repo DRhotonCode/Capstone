@@ -22,22 +22,22 @@
     <tr>
         <td>
             <li>
-                <a th:href="@{/list/artists(column='All',value='View All')}">View All</a>
+                <a th:href="@{/artists(column='All',value='View All')}">View All</a>
             </li>
         </td>
         <td>
             <li th:each="artist : ${artists}">
-                <a th:href="@{/list/artists(column=name,value=${artist.name})}" th:text="${artist.name}"></a>
+                <a th:href="@{/artists(column=name,value=${artist.name})}" th:text="${artist.name}"></a>
             </li>
         </td>
         <td>
             <li th:each="style : ${styles}">
-                <a th:href="@{/list/artists(column=style,value=${style.name})}" th:text="${style.name}"></a>
+                <a th:href="@{/artists(column=style,value=${style.name})}" th:text="${style.name}"></a>
             </li>
         </td>
         <td>
             <li th:each="artist : ${artists}">
-                <a th:href="@{/list/artists(column=location,value=${artist.location})}" th:text="${artist.location}"></a>
+                <a th:href="@{/artists(column=location,value=${artist.location})}" th:text="${artist.location}"></a>
             </li>
         </td>
     </tr>

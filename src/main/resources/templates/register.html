@@ -23,6 +23,11 @@
             <input class="form-control" th:field="${registerFormDTO.verifyPassword}" type="password" />
         </label>
     </div>
+    <input type="radio" id="user" name="user" value="user">
+    <label for="user">I'm in Search of an Artist</label>
+    <input type="radio" id="tattooArtist" name="user" value="tattooArtist">
+    <label for="tattooArtist">I'm a Tattoo Artist</label>
+    <br>
 
     <input type="submit" class="btn btn-primary" value="Register" />
 </form>

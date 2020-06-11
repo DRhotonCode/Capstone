@@ -3,25 +3,17 @@
 <head th:replace="fragments :: head">
 </head>
 <body>
+
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
-    <!DOCTYPE html>
-    <html xmlns:th="http://www.thymeleaf.org/">
-    <head th:replace="fragments :: head">
-    </head>
-    <body>
 
-    <div th:replace="fragments :: page-header"></div>
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <div class="container body-content">
+    <form th:action="@{/search/results}" method = "post">
+        <h2>Search by:</h2>
 
-        <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-
-        <form th:action="@{/search/results}" method = "post">
-            <h2>Search by:</h2>
-
-            <p>
+        <p>
             <span th:each="column : ${columns}">
                 <input
                         type="radio"
@@ -32,15 +24,43 @@
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
 
-            </p>
+        </p>
 
-            <p>
-                <label for="searchTerm">Keyword:</label>
-                <input type="text" name="searchTerm" id="searchTerm" />
-            </p>
+        <p>
+            <label for="searchTerm">Keyword:</label>
+            <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
 
-            <input type="submit" value="Search" />
-        </form>
+        <input type="submit" value="Search" />
+    </form>
+
+    <hr />
+
+
+    <table class="artist-listing">
+        <tr th:each="artist : ${artists}">
+            <td>
+                <p>
+                    Artist Id:
+                    <a th:href="@{'/view/' + ${artist.id}}" th:text="${artist.id}"></a>
+                </p>
+                <p th:text="${'Name: ' + artist.name}"></p>
+                <p th:text="${'Bio: ' + artist.bio}"></p>
+                <p>
+                    Tattoo Styles:
+                <ul th:each="style : ${artist.styles}">
+                    <li>
+                        <a th:href="@{'/styles/view/' + ${style.id}}" th:text="${style.name}"></a>
+                    </li>
+                </ul>
+                </p>
+                <p th:text="${'Shop Location: ' + artist.location}"></p>
+
+            </td>
+        </tr>
+    </table>
+
 </div>
+
 </body>
 </html>

@@ -21,10 +21,12 @@
         <span th:errors="${artist.bio}" class="error"></span>
     </div>
     <div class="form-group">
-        <label th:for="name">Styles
-            <input class="form-control" th:field="${artist.styles}" />
-        </label>
-        <span th:errors="${artist.styles}" class="error"></span>
+        <label th:for="styles">Tattoo Styles: </label>
+        <th:block th:each="style : ${styles}">
+            <input type="checkbox" name="styles" th:value="${style.id}">
+            <label th:text="${style.name}"></label>
+        </th:block>
+        <a th:href="@{'/styles/add'}">Add Styles</a>
     </div>
     <div class="form-group">
         <label th:for="name">Location

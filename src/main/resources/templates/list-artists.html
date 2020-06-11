@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <table class="artist-listing">
+        <tr th:each="artist : ${artists}">
+            <td>
+                <p>
+                    Artist Id:
+                    <a th:href="@{'/view/' + ${artist.id}}" th:text="${artist.id}"></a>
+                </p>
+                <p th:text="${'Name: ' + artist.name}"></p>
+                <p>
+                    Tattoo Styles:
+                <ul th:each="style : ${artist.styles}">
+                    <li>
+                        <a th:href="@{'/skills/view/' + ${style.id}}" th:text="${style.name}"></a>
+                    </li>
+                </ul>
+                </p>
+                <p>
+                    Shop Location:
+                    <a th:href="@{'/view/' + ${artist.location}}" th:text="${artist.location}"></a>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

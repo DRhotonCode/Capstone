@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container  body-content">
+<h1 th:text="${'Style: ' + style.name}">Default Title</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<div class="artist-listing">
+    <p th:text="${'Name: ' + style.name}"></p>
+    <p> Artists:
+    <ul>
+        <li th:each="artist : ${style.artists}">
+            <a th:href="@{'/view/' + ${artist.id}}" th:text="${artist.name}"></a>
+        </li>
+    </ul>
+    </p>
+</div>

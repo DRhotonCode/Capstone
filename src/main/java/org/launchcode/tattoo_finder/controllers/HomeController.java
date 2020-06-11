@@ -49,24 +49,25 @@ public class HomeController {
             Iterable<Artist> artists;
             if (column.toLowerCase().equals("all")){
                 artists = artistRepository.findAll();
-                model.addAttribute("title", "All Jobs");
+                model.addAttribute("title", "All Artists");
             } else {
                 artists = ArtistInfo.findByColumnAndValue(column, value, artistRepository.findAll());
-                model.addAttribute("title", "Jobs with " + columnChoices.get(column) + ": " + value);
+                model.addAttribute("title", "Artists with " + columnChoices.get(column) + ": " + value);
             }
             model.addAttribute("artists", artists);
 
-            return "index-artists";
+            return "list-artists";
         }
 
     @GetMapping("add")
     public String displayAddArtistForm(Model model) {
         model.addAttribute(new Artist());
+        model.addAttribute("styles", styleRepository.findAll());
         return "add";
     }
 
     @PostMapping("add")
-    public String processAddJobForm(@ModelAttribute @Valid Artist newArtist,
+    public String processAddArtistForm(@ModelAttribute @Valid Artist newArtist,
                                     Errors errors) {
 
         if (errors.hasErrors()) {
@@ -78,7 +79,7 @@ public class HomeController {
     }
 
     @GetMapping("view/{artistId}")
-    public String displayViewJob(Model model, @PathVariable int artistId) {
+    public String displayViewArtist(Model model, @PathVariable int artistId) {
 
         Optional optArtist = artistRepository.findById(artistId);
         if (!optArtist.isEmpty()) {

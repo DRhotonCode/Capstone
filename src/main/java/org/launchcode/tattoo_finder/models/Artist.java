@@ -24,11 +24,14 @@ public class Artist extends AbstractEntity{
     @ManyToMany
     private List<Style> styles = new ArrayList<>();
 
-    public Artist(String name, String bio, String Location, List<Style> styles) {
+    private String img;
+
+    public Artist(String name, String bio, String Location, List<Style> styles, String img) {
         this.name = name;
         this.bio = bio;
         this.Location = Location;
         this.styles = styles;
+        this.img = img;
     }
 
     public Artist(){}
@@ -63,6 +66,14 @@ public class Artist extends AbstractEntity{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     @Override

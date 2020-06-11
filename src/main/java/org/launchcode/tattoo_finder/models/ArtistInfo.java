@@ -32,10 +32,10 @@ public class ArtistInfo {
         String theValue;
         if (fieldName.equals("name")){
             theValue = artist.getName();
-        } else if (fieldName.equals("employer")){
+        } else if (fieldName.equals("styles")){
             theValue = artist.getStyles().toString();
         } else {
-            theValue = artist.getLocation().toString();
+            theValue = artist.getLocation();
         }
 
         return theValue;
@@ -50,11 +50,11 @@ public class ArtistInfo {
 
             if (artist.getName().toLowerCase().contains(lower_val)) {
                 results.add(artist);
-            } else if (artist.getName().toString().toLowerCase().contains(lower_val)) {
-                results.add(artist);
             } else if (artist.getStyles().toString().toLowerCase().contains(lower_val)) {
                 results.add(artist);
             } else if (artist.toString().toLowerCase().contains(lower_val)) {
+                results.add(artist);
+            } else if (artist.getLocation().toLowerCase().contains(lower_val)) {
                 results.add(artist);
             }
 
