@@ -21,9 +21,9 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a class="fas fa-search" th:href="@{/search}"></a></li>
+                <li th:if="${isLoggedIn}"><a class="fas fa-search" th:href="@{/search}"></a></li>
                 <li th:if="${role == 'admin'}"><a class="fas fa-plus" th:href="@{/add}"> Tattoo Artist</a></li>
-                <li><a th:href="@{/logout}">Logout</a></li>
+                <li th:if="${isLoggedIn}"><a th:href="@{/logout}">Logout</a></li>
             </ul>
         </div>
     </div>

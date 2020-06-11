@@ -48,6 +48,7 @@ public class HomeController {
             User user = authenticationController.getUserFromSession(session);
 
             model.addAttribute("role", user.getRole());
+            model.addAttribute("isLoggedIn", (user != null));
 
             model.addAttribute("artists", artistRepository.findAll());
             model.addAttribute("styles", styleRepository.findAll());
