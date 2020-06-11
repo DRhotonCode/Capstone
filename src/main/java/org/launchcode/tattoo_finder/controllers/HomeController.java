@@ -2,6 +2,7 @@ package org.launchcode.tattoo_finder.controllers;
 
 import org.launchcode.tattoo_finder.models.Artist;
 import org.launchcode.tattoo_finder.models.ArtistInfo;
+import org.launchcode.tattoo_finder.models.User;
 import org.launchcode.tattoo_finder.models.data.ArtistRepository;
 import org.launchcode.tattoo_finder.models.data.StyleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Optional;
@@ -22,6 +25,9 @@ public class HomeController {
 
         @Autowired
         private StyleRepository styleRepository;
+
+        @Autowired
+        AuthenticationController authenticationController;
 
 
         static HashMap<String, String> columnChoices = new HashMap<>();
@@ -36,7 +42,12 @@ public class HomeController {
         }
 
         @RequestMapping("")
-        public String list(Model model) {
+        public String index(HttpServletRequest request, Model model) {
+
+            HttpSession session = request.getSession();
+            User user = authenticationController.getUserFromSession(session);
+
+            model.addAttribute("role", user.getRole());
 
             model.addAttribute("artists", artistRepository.findAll());
             model.addAttribute("styles", styleRepository.findAll());

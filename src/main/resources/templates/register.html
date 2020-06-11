@@ -7,7 +7,7 @@
 
 <form method="post">
     <div class="form-group">
-        <label>Username
+        <label>Email
             <input class="form-control" th:field="${registerFormDTO.username}" />
         </label>
         <p class="error" th:errors="${registerFormDTO.username}"></p>
@@ -23,11 +23,14 @@
             <input class="form-control" th:field="${registerFormDTO.verifyPassword}" type="password" />
         </label>
     </div>
-    <input type="radio" id="user" name="user" value="user">
-    <label for="user">I'm in Search of an Artist</label>
-    <input type="radio" id="tattooArtist" name="user" value="tattooArtist">
-    <label for="tattooArtist">I'm a Tattoo Artist</label>
-    <br>
+    <div class="form-group">
+        <label>Role
+            <select class="form-control" th:field="${registerFormDTO.role}">
+                <option value="user">I'm in Search of an Artist</option>
+                <option value="admin">I'm a Tattoo Artist</option>
+            </select>
+        </label>
+    </div>
 
     <input type="submit" class="btn btn-primary" value="Register" />
 </form>

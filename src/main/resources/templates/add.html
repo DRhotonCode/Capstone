@@ -24,7 +24,7 @@
         <label th:for="styles">Tattoo Styles: </label>
         <th:block th:each="style : ${styles}">
             <input type="checkbox" name="styles" th:value="${style.id}">
-            <label th:text="${style.name}"></label>
+            <label th:text="${style.name}"></label><br>
         </th:block>
         <a th:href="@{'/styles/add'}">Add Styles</a>
     </div>
