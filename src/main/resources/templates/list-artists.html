@@ -22,14 +22,11 @@
                     Tattoo Styles:
                 <ul th:each="style : ${artist.styles}">
                     <li>
-                        <a th:href="@{'/skills/view/' + ${style.id}}" th:text="${style.name}"></a>
+                        <a th:href="@{'/styles/view/' + ${style.id}}" th:text="${style.name}"></a>
                     </li>
                 </ul>
                 </p>
-                <p>
-                    Shop Location:
-                    <a th:href="@{'/view/' + ${artist.location}}" th:text="${artist.location}"></a>
-                </p>
+                <p th:text="${'Shop Location: ' + artist.location}"></p>
             </td>
         </tr>
     </table>
